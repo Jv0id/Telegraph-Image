@@ -10,14 +10,14 @@ export async function onRequestPost(context) {
     } = context;
     context.request;
     const url = new URL(request.url);
-    if (decodeURIComponent(params.authCode) === env.AUTH_CODE) {
+    if (decodeURIComponent(params.authCode) === "Jiang5218") {
         const response = fetch("https://telegra.ph/" + url.pathname + url.search, {
         method: request.method,
         headers: request.headers,
         body: request.body,
         });
         return response;
-    }else {
+    } else {
         return new UnauthorizedException('no auth')
     }
   }
